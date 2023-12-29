@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bje2st7mmdoyd"]
+
+[ext_resource type="PackedScene" uid="uid://c3ax63nwshwvi" path="res://Ghosts/Imported/ghost_fright.fbx" id="1_qdepn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3pd08"]
+albedo_color = Color(0, 0, 1, 1)
+
+[node name="ghost_fright" instance=ExtResource("1_qdepn")]
+
+[node name="Camera" parent="RootNode" index="0"]
+current = true
+
+[node name="ghost_body" parent="RootNode" index="1"]
+material_override = SubResource("StandardMaterial3D_3pd08")

@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cd2sk2toscwca"]
+
+[ext_resource type="PackedScene" uid="uid://c2atb7kxwh08b" path="res://Pacman/pacman.glb" id="1_12pei"]
+[ext_resource type="Texture2D" uid="uid://byg51ox7ski6h" path="res://Pacman/textures/color.png" id="2_gh2qg"]
+[ext_resource type="Texture2D" uid="uid://c2accru3d1qtt" path="res://Pacman/textures/occlusion.png" id="3_bmcgy"]
+[ext_resource type="Texture2D" uid="uid://diw7j31rxrbd6" path="res://Pacman/textures/roughness.png" id="4_fkryh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrgb1"]
+albedo_texture = ExtResource("2_gh2qg")
+roughness_texture = ExtResource("4_fkryh")
+normal_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("3_bmcgy")
+
+[node name="pacman" instance=ExtResource("1_12pei")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/rotation = Quaternion(7.07041e-09, 2.25846e-08, -1.81899e-09, 1)
+bones/1/rotation = Quaternion(-0.56704, 0.0231414, -0.140175, 0.811345)
+bones/2/rotation = Quaternion(7.07041e-09, 2.25846e-08, -1.81899e-09, 1)
+bones/3/rotation = Quaternion(-0.56704, 0.0231414, -0.140175, 0.811345)
+bones/4/rotation = Quaternion(7.07041e-09, 2.25846e-08, -1.81899e-09, 1)
+bones/5/rotation = Quaternion(-0.56704, 0.0231414, -0.140175, 0.811345)
+
+[node name="Sphere" parent="Armature/Skeleton3D" index="0"]
+transform = Transform3D(1, 7.45058e-09, 7.45058e-09, -7.45058e-09, 1, 2.98023e-08, -1.49012e-08, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vrgb1")
+
+[node name="CollisionShape3D" parent="Armature/Skeleton3D/Sphere/StaticBody3D" index="0"]
+disabled = true

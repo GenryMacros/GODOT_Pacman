@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://gfc08opp7oy1"]
+
+[ext_resource type="Script" path="res://Environment/Scripts/eatable_power.gd" id="1_nyhgc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kicjw"]
+albedo_color = Color(1, 1, 0.8, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_odgnq"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ce3k7"]
+
+[node name="eatable_power" type="Node3D"]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
+script = ExtResource("1_nyhgc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_kicjw")
+mesh = SubResource("SphereMesh_odgnq")
+
+[node name="Power_Eatable_Area" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Power_Eatable_Area"]
+shape = SubResource("SphereShape3D_ce3k7")

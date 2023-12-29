@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl8l2nyp4v31a"]
+
+[ext_resource type="Script" path="res://Environment/Scripts/eatable_score.gd" id="1_8vjtq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7qi8s"]
+albedo_color = Color(0.933333, 0.721569, 0.568627, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ki06a"]
+material = SubResource("StandardMaterial3D_7qi8s")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_j8a7m"]
+
+[node name="eatable_score" type="Node3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+script = ExtResource("1_8vjtq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_ki06a")
+
+[node name="Score_Eatable_Area" type="Area3D" parent="."]
+transform = Transform3D(0.795, 0, 0, 0, 0.795, 0, 0, 0, 0.795, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Score_Eatable_Area"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+shape = SubResource("SphereShape3D_j8a7m")

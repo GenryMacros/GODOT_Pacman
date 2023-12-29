@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://cy4m57trp1xsy"]
+
+[ext_resource type="PackedScene" uid="uid://b68s8x60r0fs4" path="res://Environment/Environment_models/floor.tscn" id="1_6omim"]
+[ext_resource type="PackedScene" uid="uid://boxg2ijht762g" path="res://Environment/Environment_models/corner_left_down.tscn" id="1_ixhqb"]
+[ext_resource type="PackedScene" uid="uid://b5on63v4gc2wp" path="res://Environment/Environment_models/door.tscn" id="2_uhtc0"]
+[ext_resource type="PackedScene" uid="uid://6t74tuc3huw1" path="res://Environment/Environment_models/wall_close.tscn" id="5_01kci"]
+[ext_resource type="PackedScene" uid="uid://ba5g8qp1saqfw" path="res://Environment/Environment_models/wall_close_2.tscn" id="6_4t44t"]
+[ext_resource type="PackedScene" uid="uid://cqkhqnhj3b8ue" path="res://Environment/Environment_models/straight_wall_glv.tscn" id="8_ggkb7"]
+
+[node name="library" type="Node3D"]
+
+[node name="door" parent="." instance=ExtResource("2_uhtc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="floor" parent="." instance=ExtResource("1_6omim")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="straight_wall_glv" parent="." instance=ExtResource("8_ggkb7")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3, 0, 0)
+
+[node name="wall_close" parent="." instance=ExtResource("5_01kci")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2, 0, 0)
+
+[node name="wall_close_3" parent="." instance=ExtResource("6_4t44t")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1, 0, 0)
+
+[node name="corner_left_down" parent="." instance=ExtResource("1_ixhqb")]

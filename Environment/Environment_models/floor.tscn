@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b68s8x60r0fs4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iwtpi"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_545m5"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_swi55"]
+material = SubResource("StandardMaterial3D_545m5")
+
+[node name="floor" type="Node3D"]
+
+[node name="floor_mesh" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_iwtpi")
+mesh = SubResource("BoxMesh_swi55")

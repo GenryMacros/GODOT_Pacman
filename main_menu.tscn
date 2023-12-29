@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=3 uid="uid://fi5t66ydq0hy"]
+
+[ext_resource type="Shader" path="res://Shaders/screen_uv_shader.gdshader" id="1_pjo4x"]
+[ext_resource type="Script" path="res://MainMenu/main_menu_buttons.gd" id="2_p28n4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dr5se"]
+shader = ExtResource("1_pjo4x")
+shader_parameter/crt_brightness = 1.0
+shader_parameter/crt_ghost = 2.22
+shader_parameter/crt_grid = 0.032
+shader_parameter/crt_white_noise = 0.074
+shader_parameter/crt_curve = 0.033
+
+[sub_resource type="Theme" id="Theme_bnsun"]
+default_font_size = 90
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hsw3q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bgbp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_khnlr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rj78t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q3vkf"]
+
+[sub_resource type="Theme" id="Theme_o1ita"]
+default_font_size = 110
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_dr5se")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Buttons" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_p28n4")
+
+[node name="Play" type="Button" parent="Buttons"]
+z_index = -1
+layout_mode = 0
+offset_left = 829.0
+offset_top = 354.0
+offset_right = 1054.0
+offset_bottom = 486.0
+theme = SubResource("Theme_bnsun")
+theme_override_colors/font_hover_color = Color(0.866667, 0.866667, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hsw3q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7bgbp")
+text = "PLAY"
+
+[node name="Exit" type="Button" parent="Buttons"]
+z_index = -1
+layout_mode = 0
+offset_left = 830.0
+offset_top = 518.0
+offset_right = 1055.0
+offset_bottom = 650.0
+theme = SubResource("Theme_bnsun")
+theme_override_colors/font_hover_color = Color(0.866667, 0.866667, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hsw3q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7bgbp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_khnlr")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rj78t")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q3vkf")
+text = "EXIT
+"
+
+[node name="Titile" type="Label" parent="."]
+modulate = Color(1, 1, 0.352941, 1)
+z_index = -1
+layout_mode = 0
+offset_left = 675.0
+offset_top = 102.0
+offset_right = 1226.0
+offset_bottom = 256.0
+theme = SubResource("Theme_o1ita")
+text = "PACMAN ?"
