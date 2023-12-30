@@ -34,7 +34,7 @@ eatable_power_default=10.0
 config/name="Pacman"
 run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Pacman/textures/pacman_icon.png"
 
 [display]
 
